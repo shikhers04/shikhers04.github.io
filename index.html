@@ -7,108 +7,789 @@
 
     <title>Shikher Sharma | Mathematics</title>
 
+    <meta name="description"
+          content="Personal academic homepage of Shikher Sharma - Mathematics, Optimization and Hadamard Manifolds.">
+
     <style>
+
+        /* =====================================================
+           GENERAL PAGE SETTINGS
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: auto;
-            padding: 40px;
-            line-height: 1.6;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            background-color: #ffffff;
+            line-height: 1.7;
         }
 
-        h1 {
-            margin-bottom: 5px;
-        }
-
-        nav {
-            margin: 25px 0;
-        }
-
-        nav a {
-            margin-right: 20px;
+        a {
+            color: #1a5fb4;
             text-decoration: none;
         }
 
-        section {
-            margin-top: 40px;
+        a:hover {
+            text-decoration: underline;
         }
+
+
+        /* =====================================================
+           NAVIGATION BAR
+           ===================================================== */
+
+        nav {
+            width: 100%;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 15px 25px;
+        }
+
+        .site-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .nav-links a {
+            margin-left: 25px;
+            color: #333;
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           HERO SECTION
+           ===================================================== */
+
+        .hero {
+            background-color: #f5f7fa;
+            padding: 75px 25px;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .profile-image {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            border: 5px solid white;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 46px;
+            margin: 0 0 5px 0;
+            color: #222;
+        }
+
+        .hero-text h2 {
+            margin: 0 0 25px 0;
+            font-size: 21px;
+            font-weight: normal;
+            color: #666;
+        }
+
+        .hero-text p {
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           MAIN CONTENT SECTIONS
+           ===================================================== */
+
+        section {
+            max-width: 950px;
+            margin: auto;
+            padding: 65px 25px;
+        }
+
+        section h2 {
+            font-size: 30px;
+            color: #222;
+
+            border-bottom: 2px solid #1a5fb4;
+
+            padding-bottom: 8px;
+            margin-bottom: 30px;
+        }
+
+        section p {
+            font-size: 16px;
+            text-align: justify;
+        }
+
+
+        /* =====================================================
+           RESEARCH INTERESTS
+           ===================================================== */
+
+        .research-list {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .research-item {
+            background: #f5f7fa;
+
+            border-left: 4px solid #1a5fb4;
+
+            padding: 15px 18px;
+
+            border-radius: 4px;
+        }
+
+
+        /* =====================================================
+           PUBLICATIONS
+           ===================================================== */
+
+        .publication {
+            margin-bottom: 25px;
+
+            padding-bottom: 20px;
+
+            border-bottom:
+                1px solid #e5e5e5;
+        }
+
+        .publication-title {
+            font-weight: bold;
+        }
+
+        .journal {
+            font-style: italic;
+        }
+
+
+        /* =====================================================
+           SOFTWARE / CODE
+           ===================================================== */
+
+        .project {
+            background-color: #f7f7f7;
+
+            padding: 20px;
+
+            margin-bottom: 18px;
+
+            border-radius: 6px;
+
+            border-left:
+                4px solid #444;
+        }
+
+        .project h3 {
+            margin-top: 0;
+        }
+
+
+        /* =====================================================
+           CONTACT SECTION
+           ===================================================== */
+
+        .contact-box {
+            background-color: #f5f7fa;
+
+            padding: 30px;
+
+            border-radius: 6px;
+
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+            background: #222;
+            color: #ddd;
+
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           MOBILE VERSION
+           ===================================================== */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links a {
+                margin: 0 8px;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            section p {
+                text-align: left;
+            }
+
+        }
+
     </style>
 
 </head>
 
+
 <body>
 
-<h1>Shikher Sharma</h1>
 
-<p>
-Researcher in Mathematics
-</p>
+<!-- ==========================================================
+     NAVIGATION BAR
+
+     You can add/delete menu items here.
+     ========================================================== -->
 
 <nav>
-    <a href="#about">About</a>
-    <a href="#research">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#code">Code</a>
-    <a href="#contact">Contact</a>
+
+    <div class="nav-container">
+
+        <div class="site-name">
+            Shikher Sharma
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#about">About</a>
+
+            <a href="#research">Research</a>
+
+            <a href="#publications">Publications</a>
+
+            <a href="#software">Software</a>
+
+            <a href="#cv">CV</a>
+
+            <a href="#contact">Contact</a>
+
+        </div>
+
+    </div>
+
 </nav>
+
+
+
+<!-- ==========================================================
+     TOP / HERO SECTION
+
+     IMPORTANT:
+     Upload your photograph to GitHub and name it:
+
+          profile.jpg
+
+     ========================================================== -->
+
+<div class="hero">
+
+    <div class="hero-container">
+
+
+        <!-- YOUR PHOTOGRAPH -->
+
+        <img
+            src="profile.jpg"
+            alt="Shikher Sharma"
+            class="profile-image"
+        >
+
+
+
+        <div class="hero-text">
+
+            <h1>Shikher Sharma</h1>
+
+            <h2>
+                Mathematics · Optimization · Hadamard Manifolds
+            </h2>
+
+            <p>
+                Postdoctoral Fellow<br>
+                Department of Mathematics<br>
+                Technion – Israel Institute of Technology
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     ABOUT ME
+     ========================================================== -->
 
 <section id="about">
 
-<h2>About Me</h2>
+    <h2>Hello!</h2>
 
-<p>
-I am a researcher in Mathematics working in optimization,
-nonlinear analysis, and equilibrium problems on Hadamard manifolds.
-</p>
+
+    <p>
+        Welcome to my homepage. I am Shikher Sharma, currently a
+        Postdoctoral Fellow at the Department of Mathematics,
+        Technion – Israel Institute of Technology.
+    </p>
+
+
+    <p>
+        Originally from Gola Gokarannath, I moved to Delhi to pursue
+        my undergraduate and postgraduate studies at the University
+        of Delhi, before continuing my research journey at
+        Banaras Hindu University, where I completed my Ph.D. in
+        Mathematics.
+    </p>
+
+
+    <p>
+        My research focuses on optimization techniques on different
+        kinds of spaces and their applications. I am particularly
+        interested in developing efficient algorithms for
+        large-scale problems and exploring their applications.
+        My work includes iterative methods on Hadamard manifolds
+        and Hilbert spaces.
+    </p>
+
+
+    <p>
+        Beyond academics, I enjoy running, cricket and badminton.
+        I also enjoy travelling and exploring different countries,
+        cultures and perspectives.
+    </p>
 
 </section>
 
+
+
+<!-- ==========================================================
+     RESEARCH SECTION
+
+     Add or remove research topics below.
+     ========================================================== -->
 
 <section id="research">
 
-<h2>Research Interests</h2>
+    <h2>Research Interests</h2>
 
-<ul>
-    <li>Optimization on Hadamard manifolds</li>
-    <li>Equilibrium problems</li>
-    <li>Variational inequalities</li>
-    <li>Monotone operator theory</li>
-    <li>Proximal algorithms</li>
-    <li>Extragradient algorithms</li>
-    <li>Convex analysis on Riemannian manifolds</li>
-</ul>
+
+    <div class="research-list">
+
+
+        <div class="research-item">
+            Optimization on Hadamard Manifolds
+        </div>
+
+
+        <div class="research-item">
+            Equilibrium Problems
+        </div>
+
+
+        <div class="research-item">
+            Variational Inequalities
+        </div>
+
+
+        <div class="research-item">
+            Monotone Operator Theory
+        </div>
+
+
+        <div class="research-item">
+            Convex Analysis on Riemannian Manifolds
+        </div>
+
+
+        <div class="research-item">
+            Proximal Point Algorithms
+        </div>
+
+
+        <div class="research-item">
+            Extragradient Methods
+        </div>
+
+
+        <div class="research-item">
+            Fixed Point Theory
+        </div>
+
+
+    </div>
 
 </section>
 
+
+
+<!-- ==========================================================
+     PUBLICATIONS
+
+     COPY one "publication" block whenever you add a paper.
+     ========================================================== -->
 
 <section id="publications">
 
-<h2>Publications</h2>
+    <h2>Publications</h2>
 
-<p>My publications will be listed here.</p>
+
+
+    <!-- PUBLICATION 1 -->
+
+    <div class="publication">
+
+        <div class="publication-title">
+
+            Accelerated iterative splitting methods on
+            Hadamard manifolds
+
+        </div>
+
+        <div>
+
+            Shikher Sharma and J. C. Yao
+
+        </div>
+
+        <div class="journal">
+
+            Optimization, 2024
+
+        </div>
+
+    </div>
+
+
+
+    <!-- PUBLICATION 2 -->
+
+    <div class="publication">
+
+        <div class="publication-title">
+
+            Regularized Extragradient Methods for Solving
+            Equilibrium Problems on Hadamard Manifolds
+
+        </div>
+
+        <div>
+
+            Shikher Sharma, Pankaj Gautam and Simeon Reich
+
+        </div>
+
+        <div class="journal">
+
+            Manuscript
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ADD MORE PAPERS BELOW -->
+
 
 </section>
 
 
-<section id="code">
 
-<h2>Research Code</h2>
+<!-- ==========================================================
+     SOFTWARE / MATLAB CODE
+     ========================================================== -->
 
-<p>
-MATLAB implementations associated with my research projects.
-</p>
+<section id="software">
+
+    <h2>Software & Numerical Experiments</h2>
+
+
+    <p>
+
+        MATLAB implementations associated with my research
+        are available through my GitHub repositories.
+
+    </p>
+
+
+
+    <div class="project">
+
+        <h3>
+            Regularized Extragradient Methods
+        </h3>
+
+        <p>
+
+            MATLAB implementations of regularized
+            extragradient algorithms for equilibrium problems
+            on Hadamard manifolds.
+
+        </p>
+
+        <!-- ADD YOUR REPOSITORY URL BELOW -->
+
+        <a href="#">
+
+            View project on GitHub
+
+        </a>
+
+    </div>
+
+
+
+    <div class="project">
+
+        <h3>
+            Hyperbolic Space Experiments
+        </h3>
+
+        <p>
+
+            Numerical experiments for optimization and
+            equilibrium algorithms on real hyperbolic spaces.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="project">
+
+        <h3>
+            Positive Orthant Experiments
+        </h3>
+
+        <p>
+
+            Numerical experiments on the positive orthant
+            endowed with its logarithmic Riemannian metric.
+
+        </p>
+
+    </div>
+
+
+
+    <div class="project">
+
+        <h3>
+            Nash–Cournot Equilibrium Problems
+        </h3>
+
+        <p>
+
+            MATLAB implementation of equilibrium algorithms
+            for Nash–Cournot models.
+
+        </p>
+
+    </div>
+
 
 </section>
 
+
+
+<!-- ==========================================================
+     CV SECTION
+
+     Upload your PDF to the GitHub repository and name it:
+
+          Shikher_Sharma_CV.pdf
+
+     ========================================================== -->
+
+<section id="cv">
+
+    <h2>Curriculum Vitae</h2>
+
+    <p>
+
+        You can download my complete academic curriculum vitae below.
+
+    </p>
+
+
+    <p>
+
+        <a href="Shikher_Sharma_CV.pdf"
+           target="_blank">
+
+            📄 Download my CV
+
+        </a>
+
+    </p>
+
+</section>
+
+
+
+<!-- ==========================================================
+     CONTACT
+     ========================================================== -->
 
 <section id="contact">
 
-<h2>Contact</h2>
+    <h2>Contact</h2>
 
-<p>Email: your-email@example.com</p>
+
+    <div class="contact-box">
+
+
+        <p>
+
+            <strong>Shikher Sharma</strong>
+
+        </p>
+
+
+        <p>
+
+            Department of Mathematics<br>
+
+            Technion – Israel Institute of Technology<br>
+
+            Haifa, Israel
+
+        </p>
+
+
+        <p>
+
+            <strong>Email:</strong>
+
+            <a href="mailto:shikhers043@email.com">
+
+                shikhers043@email.com
+
+            </a>
+
+        </p>
+
+
+        <p>
+
+            <strong>GitHub:</strong>
+
+            <a href="https://github.com/shikhers04"
+               target="_blank">
+
+                github.com/shikhers04
+
+            </a>
+
+        </p>
+
+
+        <!-- Add Google Scholar here later -->
+
+        <!--
+
+        <p>
+
+            <strong>Google Scholar:</strong>
+
+            <a href="YOUR-GOOGLE-SCHOLAR-LINK"
+               target="_blank">
+
+                Google Scholar Profile
+
+            </a>
+
+        </p>
+
+        -->
+
+
+    </div>
 
 </section>
 
 
+
+<!-- ==========================================================
+     FOOTER
+     ========================================================== -->
+
+<footer>
+
+    © 2026 Shikher Sharma · Mathematics
+
+</footer>
+
+
 </body>
+
 </html>
